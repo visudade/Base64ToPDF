@@ -32,6 +32,10 @@ if not all(c in "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+
 # Decodificando a string de base64
 bytes = b64decode(b64)
 
+# Verificando se os primeiros bytes da string decodificada são a assinatura do arquivo PDF
+if bytes[0:4] != b'%PDF':
+  raise ValueError('Missing the PDF file signature')
+
 # Criando um objeto VirusTotalAPI
 vt = virustotal.VirusTotal("SUA CHAVE API AQUI")
 
