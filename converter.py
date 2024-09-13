@@ -3,6 +3,7 @@ from base64 import b64decode
 
 # Ponto de inserção do Base64 que deve ser decodado
 b64 = 'XXXX BASE64 XXXXX'
+#teste
 
 # Validando caracteres do Base64
 bytes = b64decode(b64, validate=True)
